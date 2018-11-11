@@ -1,0 +1,38 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-is-mobile .app-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+.app-title {
+  margin-left: 8px;
+}
+
+.app-sidenav-container {
+  flex: 1;
+}
+
+.app-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+mat-sidenav {
+  width: 240px;
+
+  mat-icon {
+    margin-right: 20px;
+  }
+}
+
+.mat-sidenav-content {
+    padding: 24px;
+}

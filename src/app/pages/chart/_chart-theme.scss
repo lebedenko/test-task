@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+@mixin chart-theme($theme) {
+  $warn: map-get($theme, warn);
+
+  .error {
+    color: mat-color($warn);
+  }
+}

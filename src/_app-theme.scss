@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+@import './app/pages/home/home-theme';
+@import './app/pages/chart/chart-theme';
+
+@mixin app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $config: mat-typography-config();
+
+  $palette: mat-get($theme, palette);
+
+  .mat-sidenav-content {
+    background-color: mat-color(mat-palette($mat-blue-gray, 100));
+  }
+
+  .mat-drawer {
+    background-color: mat-color($primary);
+    color: mat-color($primary, default-contrast);
+
+    .mat-nav-list {
+      .mat-list-item {
+        color: mat-color($primary, default-contrast);
+
+        &.active {
+          color: mat-color($accent);
+        }
+      }
+    }
+
+  }
+
+  @include home-theme($theme);
+  @include chart-theme($theme);
+}

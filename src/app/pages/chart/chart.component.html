@@ -1,0 +1,18 @@
+<mat-card *ngIf="loading">
+  <mat-spinner></mat-spinner>
+</mat-card>
+
+<mat-card *ngIf="error">
+  <span class="error">{{error}}</span>
+</mat-card>
+
+<mat-card *ngIf="!loading && !error">
+  <mat-card-header>
+    <mat-card-title>{{meta.title}}</mat-card-title>
+    <mat-card-subtitle>{{meta.subTitle}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <app-g-chart [data]="data"></app-g-chart>
+  </mat-card-content>
+</mat-card>

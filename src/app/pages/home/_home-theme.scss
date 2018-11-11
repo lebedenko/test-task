@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin home-theme($theme) {
+  $primary: map-get($theme, primary);
+  $config: mat-typography-config();
+
+  .greeting {
+    color: mat-color($primary, lighter);
+    font: {
+      size: mat-font-size($config, display-4);
+      weight: 300;
+    }
+    text-align: center;
+    padding: 148px 0;
+  }
+}
